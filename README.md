@@ -11,18 +11,22 @@ Create MongoDB and update the database credentials.
 ```` npm install ````
 
 #### Generation encryption keys
--- For first time installation, generate Encryption keys by running;
+For first time installation, generate Encryption keys by running;
+
 ```` npm run generate:keys ````
 
 #### Start the application
 
 Run and watch for changes
+
 ```` npm run watch ````
 
 Run without watching for changes
+
 ```` npm start ````
 
 Run production build
+
 ```` npm run build ````
 
 ### Documentation
