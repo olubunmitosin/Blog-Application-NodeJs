@@ -14,3 +14,10 @@ export interface AppErrorArgs {
     isOperational?: boolean;
     validationErrors?: ValidationType[];
 }
+
+// Config interface
+export interface Config {
+    mongoURI: string;
+    jwtSecret: string;
+    jwtExpiration: number
+}
