@@ -63,7 +63,7 @@ export const login = async (req: Request, res: Response) => {
         }
 
     } catch (e) {
-        responseMessage = "An error occurred";
+        responseMessage = "Account with supplied email does not exists";
     }
 
     let response = responseStructure(responseMessage, statusValue, responseData);
