@@ -1,17 +1,25 @@
 import { connect } from 'mongoose';
 import DatabaseConfig from '../config/database';
+import { MongoClient, ServerApiVersion } from 'mongodb';
 
 const env = process.env.NODE_ENV || 'development';
 const config = DatabaseConfig[env];
 
 const dbConnect = async () => {
   try {
-    if (config.database.url) {
+    if (env === 'development') {
         connect(config.database.url);
-      } else if (config.database.config.dbName) {
+      } else if (env === 'testing') {
         connect(`${config.database.protocol}://${config.database.username}:${config.database.password}@${config.database.host}:${config.database.port}`, {});
       } else {
-        connect(`${config.database.protocol}://${config.database.username}:${config.database.password}@${config.database.host}:${config.database.port}/${config.database.name}`, {});
+        const dbClient = new MongoClient(config.database.url, {
+          serverApi: {
+            version: ServerApiVersion.v1,
+            strict: true,
+            deprecationErrors: true,
+          }
+        });
+        await dbClient.connect();
       }
     console.log('Database connected');
   } catch (error) {
