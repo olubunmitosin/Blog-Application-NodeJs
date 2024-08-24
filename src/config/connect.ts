@@ -20,7 +20,7 @@ const dbConnect = async () => {
           }
         });
         await dbClient.connect();
-        await dbClient.db("blog_application").command({ ping: 1 });
+        await dbClient.db("blog_application");
       }
     console.log('Database connected');
   } catch (error) {
