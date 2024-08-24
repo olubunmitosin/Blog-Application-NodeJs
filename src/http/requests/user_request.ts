@@ -6,5 +6,5 @@ export const loginRules = {
 export const registerRules = {
     email: 'required|email',
     name: 'required|string|minLength:5|maxLength:200',
-    password: 'required|string|min:8',
+    password: 'required|string|minLength:8',
 };
