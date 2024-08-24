@@ -8,7 +8,7 @@
     "start": "ts-node src/server.ts",
     "watch": "nodemon src/server.ts",
     "serve": "node dist/server.js",
-    "postinstall": "npx ts-node -e \"import { generatePrivateKey } from './src/utilities/cryptoService'; generatePrivateKey()\"",
+    "generate:keys": "npx ts-node -e \"import { generatePrivateKey } from './src/utilities/cryptoService'; generatePrivateKey()\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
